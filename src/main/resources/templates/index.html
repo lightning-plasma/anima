@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+<h1>anima bookshelf</h1>
+<div class="message" th:text="${message}" th:if="${message}"></div>
+<div class="alert" th:text="${alert}" th:if="${alert}"></div>
+<table id="bookshelf">
+    <thead>
+    <tr>
+        <th>ISBN</th>
+        <th>タイトル</th>
+        <th>著者</th>
+        <th>価格</th>
+    </tr>
+    </thead>
+    <tbody id="books">
+    <tr th:each="book: ${booksPresenter.getBooks()}" th:attr="data-href=|/anima/books/${book.getIsbn()}|">
+        <td><a th:text="${book.getIsbn()}" th:href="@{/anima/books/{isbn}(isbn=${book.getIsbn()})}"></a></td>
+        <td th:text="${book.getTitle()}"></td>
+        <td th:text="${book.getAuthor()}"></td>
+        <td th:text="${book.getFormattedPrice()}"></td>
+    </tr>
+    </tbody>
+</table>
+<div>
+    <a href="/anima/books/new">Register new book</a>
+</div>
+</body>
+</html>

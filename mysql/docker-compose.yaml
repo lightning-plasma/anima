@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  db:
+    build: .
+    container_name: anima-db
+    volumes:
+      - db-store:/var/lib/mysql
+      - ./conf/my.cnf:/etc/mysql/conf.d/my.cnf
+    environment:
+      - MYSQL_DATABASE=anima
+      - MYSQL_USER=jung
+      - MYSQL_PASSWORD=secret
+      - MYSQL_ROOT_PASSWORD=password
+      - TZ=Asia/Tokyo
+    ports:
+      - "3306:3306"
+
+volumes:
+  db-store:

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+<h1>anima book</h1>
+<table id="book">
+    <tbody id="bookDetail">
+    <tr>
+        <th>ISBN</th>
+        <td th:text="${bookPresenter.getIsbn()}"></td>
+    </tr>
+    <tr>
+        <th>タイトル</th>
+        <td th:text="${bookPresenter.getTitle()}"></td>
+    </tr>
+    <tr>
+        <th>著者</th>
+        <td th:text="${bookPresenter.getAuthor()}"></td>
+    </tr>
+    <tr>
+        <th>価格</th>
+        <td th:text="${bookPresenter.getPrice()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
