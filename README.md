@@ -1,6 +1,7 @@
 # anima - Spring Boot Application Sample
 
-Spring BootのシンプルなCRUD アプリケーション にしようかと思ったけど疲れたからCとRだけ実装した  
+Spring BootのシンプルなCRUD アプリケーション  
+CとRを実装済
 
 ## 技術要素
 
